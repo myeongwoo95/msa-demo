@@ -1,8 +1,10 @@
 package com.example.orderservice.controller.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter @Setter
 public class OrdersRequestDto {
 
     private Long productId;

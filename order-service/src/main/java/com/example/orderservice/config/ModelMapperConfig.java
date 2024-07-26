@@ -8,24 +8,25 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ModelMapperConfig {
 
-    private final ModelMapper modelMapper = new ModelMapper();
-
     @Bean
     public ModelMapper strictMapper() {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        return modelMapper;
+        ModelMapper strictMapper = new ModelMapper();
+        strictMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        return strictMapper;
     }
 
     @Bean
     public ModelMapper standardMapper() {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);
-        return modelMapper;
+        ModelMapper standardMapper = new ModelMapper();
+        standardMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);
+        return standardMapper;
     }
 
     @Bean
     public ModelMapper looseMapper() {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        return modelMapper;
+        ModelMapper looseMapper = new ModelMapper();
+        looseMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+        return looseMapper;
     }
 
 }

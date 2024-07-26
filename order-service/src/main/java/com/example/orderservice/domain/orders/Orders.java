@@ -19,7 +19,6 @@ public class Orders extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long orderId;
 
     @Column(nullable = false)

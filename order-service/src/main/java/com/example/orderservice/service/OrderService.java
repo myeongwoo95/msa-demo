@@ -25,6 +25,8 @@ public class OrderService {
         System.out.println("ordersRequestDto = " + ordersRequestDto);
 
         Orders orders = strictMapper.map(ordersRequestDto, Orders.class);
+        System.out.println("orders = " + orders);
+
         ordersRepository.save(orders);
 
         return strictMapper.map(orders, OrdersResponseDto.class);

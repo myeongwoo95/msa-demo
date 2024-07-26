@@ -25,7 +25,6 @@ public class Catalog extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long catalogId;
 
     @Column(nullable = false, length = 120, unique = true)
