@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # org.h2.Driver, org.mariadb.jdbc.Driver, com.mysql.cj.jdbc.Driver
+    url: ${DB_URL} # jdbc:h2:~/test, jdbc:h2:tcp://localhost/~/test, jdbc:mariadb://localhost:3306/test?serverTimezone=Asia/Seoul, jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul
+    username: ${DB_ID}
+    password: ${DB_PW}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
