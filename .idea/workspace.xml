@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b3bc42a-888b-46fb-a062-bbfefcec76f8" name="Changes" comment="Spring Cloud Gateway 추가">
-      <change beforePath="$PROJECT_DIR$/gateway/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" beforeDir="false" />
+    <list default="true" id="3b3bc42a-888b-46fb-a062-bbfefcec76f8" name="Changes" comment=".idea 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +155,7 @@
       <workItem from="1722303863475" duration="11000" />
       <workItem from="1722308472392" duration="27000" />
       <workItem from="1722387495357" duration="76000" />
+      <workItem from="1722389027862" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary=":&gt;">
       <created>1721968929185</created>
@@ -189,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722301572378</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".idea 추가">
+      <created>1722389116200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722389116200</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +213,7 @@
     <MESSAGE value=":&gt;" />
     <MESSAGE value="ModelMapperConfig 수정, Entity id 컬럼에 nullable 삭제" />
     <MESSAGE value="Spring Cloud Gateway 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Cloud Gateway 추가" />
+    <MESSAGE value=".idea 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea 추가" />
   </component>
 </project>
