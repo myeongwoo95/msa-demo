@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/catalog-service")
 public class CatalogController {
 
     private final CatalogService catalogService;

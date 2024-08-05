@@ -1,0 +1,30 @@
+server:
+  port: ${PORT}
+
+spring:
+  application:
+    name: apigateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: catalog-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/catalog-service/**
+          filters:
+            - RewritePath=/catalog-service/(?<segment>.*), /$\{segment}
+
+        - id: order-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - RewritePath=/order-service/(?<segment>.*), /$\{segment}
+
+        - id: user-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/user-service/**
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
