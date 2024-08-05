@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b3bc42a-888b-46fb-a062-bbfefcec76f8" name="Changes" comment=".idea 추가">
+    <list default="true" id="3b3bc42a-888b-46fb-a062-bbfefcec76f8" name="Changes" comment=".idea 수정">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,18 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/user-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/catalog-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/gateway">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/order-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -80,10 +94,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user-service" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Spring Boot.CatalogServiceApplication">
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
     <configuration name="CatalogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="catalog-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.catalogservice.CatalogServiceApplication" />
@@ -92,6 +107,7 @@
         <env name="DB_URL" value="jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul" />
         <env name="DB_ID" value="root" />
         <env name="DB_PW" value="1234" />
+        <env name="PORT" value="8080" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,6 +116,7 @@
     <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gateway.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway.GatewayApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,6 +129,7 @@
         <env name="DB_URL" value="jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul" />
         <env name="DB_ID" value="root" />
         <env name="DB_PW" value="1234" />
+        <env name="PORT" value="8081" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,6 +143,7 @@
         <env name="DB_URL" value="jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul" />
         <env name="DB_ID" value="root" />
         <env name="DB_PW" value="1234" />
+        <env name="PORT" value="8082" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,7 +174,11 @@
       <workItem from="1722303863475" duration="11000" />
       <workItem from="1722308472392" duration="27000" />
       <workItem from="1722387495357" duration="76000" />
-      <workItem from="1722389027862" duration="1191000" />
+      <workItem from="1722389027862" duration="4104000" />
+      <workItem from="1722417547239" duration="73000" />
+      <workItem from="1722418162839" duration="12000" />
+      <workItem from="1722821114456" duration="1084000" />
+      <workItem from="1722822490558" duration="4277000" />
     </task>
     <task id="LOCAL-00001" summary=":&gt;">
       <created>1721968929185</created>
@@ -192,7 +215,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722389116200</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gateway 추가">
+      <created>1722394732315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722394732315</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".idea 수정">
+      <created>1722394778377</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722394778377</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +251,8 @@
     <MESSAGE value="ModelMapperConfig 수정, Entity id 컬럼에 nullable 삭제" />
     <MESSAGE value="Spring Cloud Gateway 추가" />
     <MESSAGE value=".idea 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea 추가" />
+    <MESSAGE value="gateway 추가" />
+    <MESSAGE value=".idea 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea 수정" />
   </component>
 </project>
