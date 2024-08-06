@@ -16,7 +16,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @Table(name = "users")
 public class Users extends BaseTimeEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
@@ -29,5 +28,4 @@ public class Users extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String encryptedPwd;
-
 }

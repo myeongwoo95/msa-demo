@@ -13,6 +13,8 @@ spring:
           predicates:
             - Path=/catalog-service/**
           filters:
+            - AddRequestHeader=catalog-header-key-request, catalog-header-value-request
+            - AddResponseHeader=catalog-header-key-response, catalog-header-value-request
             - RewritePath=/catalog-service/(?<segment>.*), /$\{segment}
 
         - id: order-service

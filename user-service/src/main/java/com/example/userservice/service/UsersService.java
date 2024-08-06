@@ -7,6 +7,9 @@ import com.example.userservice.domain.users.Users;
 import com.example.userservice.domain.users.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,11 +19,19 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class UsersService {
+public class UsersService implements UserDetailsService {
 
     private final UsersRepository usersRepository;
     private final ModelMapper strictMapper;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Users user = usersRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException(username + ": not found"));
+
+        return new User(user.getEmail(), user.getEncryptedPwd(), new ArrayList<>());
+    }
 
     public Long createUser(UsersSignUpRequestDto requestDto){
         Users user = strictMapper.map(requestDto, Users.class);
@@ -39,6 +50,11 @@ public class UsersService {
         userResponseDto.setOrders(orders);
 
         return userResponseDto;
+    }
+
+    public Users getUserByEmail(String email){
+        return usersRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(email + ": not found"));
     }
 
     public List<Users> getAllUsers(){

@@ -14,3 +14,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+token:
+  expiration_time: ${TOKEN_EXPIRATION_TIME}
+  secret: ${TOKEN_SECRET}

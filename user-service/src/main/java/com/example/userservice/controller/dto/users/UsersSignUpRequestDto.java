@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class UsersSignUpRequestDto {
-
     @NotNull(message = "Email cannot be null")
     @Size(min = 2, message = "Email not be less than two characters")
     @Email
@@ -22,5 +21,4 @@ public class UsersSignUpRequestDto {
     @NotNull(message = "Password cannot be null")
     @Size(min = 2, message = "Password must be equal or grater than 2 characters")
     private String pwd;
-
 }

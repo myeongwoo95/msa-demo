@@ -18,7 +18,7 @@ import java.util.List;
 public class UsersController {
 
     private final UsersService usersService;
-    private final ModelMapper strictMapper;
+    private final ModelMapper modelMapper;
 
     @PostMapping("/users")
     public ResponseEntity<Long> createUser(@RequestBody UsersSignUpRequestDto requestDto) {
@@ -32,7 +32,7 @@ public class UsersController {
 
         List<UserResponseDto> result = new ArrayList<>();
         users.forEach(v -> {
-            result.add(strictMapper.map(v, UserResponseDto.class));
+            result.add(modelMapper.map(v, UserResponseDto.class));
         });
 
         return ResponseEntity.status(HttpStatus.OK).body(result);
