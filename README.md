@@ -11,3 +11,19 @@
 
 # bootRun 실행 시 args 설정
 catalog-service: ./gradlew bootRun --args='--server.port=8080'
+
+# Gateway filter 순서
+- 글로벌 필터
+- 커스텀 필터
+- 로깅필터(옵션으로 글로벌보다 먼저 실행시킬 수 있음, 옵션=HIGHEST_PRECEDENCE)
+- 메인로직 실행
+
+# ddl-auto, generate-ddl 차이
+# 방언 설정안해도 잘되는데 이것도 확인해보기
+# logging:level:com....으로 해주는게 좋은지 root로 해주는게 좋은지 (둘차이가없는거같은데)
+# init sql 설정(DDL 및 테스트 데이터 insert) -> 여기서 ddl하는게 좋은거같음 (안됫엇는데...)
+
+# 질문
+- 스프링 클라우드 게이트웨이 uri를 보면 http://localhost:8080/ 이런식으로 되어있는데 이 경우는
+서비스 디스커버리 유레카를 사용안햇을경우고 사용하면 lb://USER-SERVICE 이런식으로 사용함, 이걸 k8s에 마이그레이션한다고했을때 lb://USER-SERVICE 이런식으로 사용했을때
+k8s service 오브젝트 이름을 잘 찾아가는지... 아니면 못찾아가는지.. 기본적으로 (유레카 서비스는 안넣는게 좋은거같음 강사도 chatGPT도 그렇게 말함) 강의 확인해보기

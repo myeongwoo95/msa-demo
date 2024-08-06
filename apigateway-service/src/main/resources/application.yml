@@ -7,6 +7,12 @@ spring:
 
   cloud:
     gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            preLogger: true
+            postLogger: true
+
       routes:
         - id: catalog-service
           uri: http://localhost:8080
@@ -16,6 +22,11 @@ spring:
             - AddRequestHeader=catalog-header-key-request, catalog-header-value-request
             - AddResponseHeader=catalog-header-key-response, catalog-header-value-request
             - RewritePath=/catalog-service/(?<segment>.*), /$\{segment}
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                preLogger: true
+                postLogger: true
 
         - id: order-service
           uri: http://localhost:8081
