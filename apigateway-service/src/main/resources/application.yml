@@ -72,3 +72,4 @@ spring:
 
 token:
   secret: ${TOKEN_SECRET}
+

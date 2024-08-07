@@ -101,3 +101,4 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                 .getBody();
     }
 }
+
