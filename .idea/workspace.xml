@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b3bc42a-888b-46fb-a062-bbfefcec76f8" name="Changes" comment=":&gt;">
-      <change afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/config/security/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/config/security/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/CustomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/CustomFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/GlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/GlobalFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-service/src/main/java/com/example/apigatewayservice/filter/LoggingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/config/JwtAuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +199,8 @@
       <workItem from="1722822490558" duration="4534000" />
       <workItem from="1722827207312" duration="4885000" />
       <workItem from="1722933868394" duration="10444000" />
-      <workItem from="1722993323265" duration="5954000" />
+      <workItem from="1722993323265" duration="6576000" />
+      <workItem from="1723023495672" duration="1897000" />
     </task>
     <task id="LOCAL-00001" summary=":&gt;">
       <created>1721968929185</created>
@@ -284,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722948065162</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=":&gt;">
+      <created>1723006562610</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1723006562610</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
