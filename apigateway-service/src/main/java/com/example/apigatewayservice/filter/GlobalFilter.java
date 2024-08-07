@@ -17,6 +17,14 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
         super(Config.class);
     }
 
+    // application.yml에 설정된 값이 들어온다.
+    @Data
+    public static class Config {
+        // Put the configuration properties
+        private boolean preLogger;
+        private boolean postLogger;
+    }
+
     @Override
     public GatewayFilter apply(Config config) {
         // Pre Filter (Pre Filter: 요청을 처리(서비스 호출)하기 전에 실행)
@@ -35,14 +43,6 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
                 }
             }));
         };
-    }
-
-    // application.yml에 설정된 값이 들어온다.
-    @Data
-    public static class Config {
-        // Put the configuration properties
-        private boolean preLogger;
-        private boolean postLogger;
     }
 }
 

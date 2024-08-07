@@ -22,13 +22,14 @@ import java.util.Collections;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-
     @Value("${token.secret}")
     private String jwtSecret;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+
+        System.out.println("hihi~");
 
         String header = request.getHeader("Authorization");
 
@@ -37,19 +38,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        String token = header.substring(7);
+        String token = header.substring(7); // "Bearer " 제거
 
         try {
             Claims claims = getClaimsFromToken(token);
             String userId = claims.getSubject();
 
-            if (userId != null) {
+            if (userId != null || !userId.isEmpty()) {
                 Authentication authentication = new UsernamePasswordAuthenticationToken(userId, null, Collections.emptyList());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (SignatureException e) {
             // Invalid JWT signature
-            System.out.println("sodifjisdfjiosdjoifsjdfjiosdf");
             e.printStackTrace();
         }
 

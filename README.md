@@ -9,6 +9,10 @@
 - 스프링부트 3.3.2
 - gradle 8.8
 
+# spring cloud gateway의 security 설정
+- spring cloud gateway는 기본적으로 security 설정이 되어있지 않음
+- 단, authFilter를 이용하여 토큰 검증을 함
+
 # bootRun 실행 시 args 설정
 catalog-service: ./gradlew bootRun --args='--server.port=8080'
 
@@ -27,3 +31,7 @@ catalog-service: ./gradlew bootRun --args='--server.port=8080'
 - 스프링 클라우드 게이트웨이 uri를 보면 http://localhost:8080/ 이런식으로 되어있는데 이 경우는
 서비스 디스커버리 유레카를 사용안햇을경우고 사용하면 lb://USER-SERVICE 이런식으로 사용함, 이걸 k8s에 마이그레이션한다고했을때 lb://USER-SERVICE 이런식으로 사용했을때
 k8s service 오브젝트 이름을 잘 찾아가는지... 아니면 못찾아가는지.. 기본적으로 (유레카 서비스는 안넣는게 좋은거같음 강사도 chatGPT도 그렇게 말함) 강의 확인해보기
+>> 그냥 서비스 주소 사용하면됨 <...>.local.cluster
+> 
+
+- 스프링 클라우드 게이트웨이에서 시큐리티를 추가할 수 없나?

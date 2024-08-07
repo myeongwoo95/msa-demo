@@ -15,6 +15,10 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
         super(Config.class);
     }
 
+    public static class Config {
+        // Put the configuration properties
+    }
+
     @Override
     public GatewayFilter apply(Config config) {
         // Pre Filter (Pre Filter: 요청을 처리(서비스 호출)하기 전에 실행)
@@ -29,9 +33,5 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
                 log.info("Custom POST filter : response code -> {}", response.getStatusCode());
             }));
         };
-    }
-
-    public static class Config {
-        // Put the configuration properties
     }
 }

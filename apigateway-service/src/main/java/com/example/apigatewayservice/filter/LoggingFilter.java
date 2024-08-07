@@ -18,6 +18,14 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
         super(Config.class);
     }
 
+    // application.yml에 설정된 값이 들어온다.
+    @Data
+    public static class Config {
+        // Put the configuration properties
+        private boolean preLogger;
+        private boolean postLogger;
+    }
+
     @Override
     public GatewayFilter apply(Config config) {
         GatewayFilter filter = new OrderedGatewayFilter((exchange, chain) -> {
@@ -35,16 +43,11 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
                     log.info("Logging POST Filter: response code -> {}", response.getStatusCode());
                 }
             }));
-        }, Ordered.LOWEST_PRECEDENCE); // 필터 우선순위 설정 (낮을수록 늦게 실행) HIGHEST_PRECEDENCE(가장먼저, 글로벌보다도 먼저), LOWEST_PRECEDENCE(가장 나중에)
+        }, Ordered.LOWEST_PRECEDENCE);
+        // 필터 우선순위 설정
+        // Ordered.HIGHEST_PRECEDENCE   (가장 먼저 실행, 글로벌보다도 먼저 실행)
+        // Ordered.LOWEST_PRECEDENCE    (가장 나중에)
 
         return filter;
-    }
-
-    // application.yml에 설정된 값이 들어온다.
-    @Data
-    public static class Config {
-        // Put the configuration properties
-        private boolean preLogger;
-        private boolean postLogger;
     }
 }

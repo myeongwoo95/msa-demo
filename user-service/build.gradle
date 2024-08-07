@@ -18,8 +18,7 @@ repositories {
 }
 
 dependencies {
-
-    /* Web */
+    /* web */
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     /* JPA */
@@ -49,7 +48,6 @@ dependencies {
     /* Test */
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
 }
 
 tasks.named('test') {
