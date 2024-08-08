@@ -1,6 +1,6 @@
 package com.example.userservice.controller;
 
-import com.example.userservice.controller.dto.users.UserResponseDto;
+import com.example.userservice.controller.dto.users.UsersResponseDto;
 import com.example.userservice.controller.dto.users.UsersSignUpRequestDto;
 import com.example.userservice.domain.users.Users;
 import com.example.userservice.service.UsersService;
@@ -27,19 +27,19 @@ public class UsersController {
     }
 
     @GetMapping("/users")
-    public ResponseEntity<List<UserResponseDto>> getAllUsers() {
+    public ResponseEntity<List<UsersResponseDto>> getAllUsers() {
         Iterable<Users> users = usersService.getAllUsers();
 
-        List<UserResponseDto> result = new ArrayList<>();
+        List<UsersResponseDto> result = new ArrayList<>();
         users.forEach(v -> {
-            result.add(modelMapper.map(v, UserResponseDto.class));
+            result.add(modelMapper.map(v, UsersResponseDto.class));
         });
 
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @GetMapping("/users/{userId}")
-    public ResponseEntity<UserResponseDto> getUserById(@PathVariable Long userId) {
+    public ResponseEntity<UsersResponseDto> getUserById(@PathVariable Long userId) {
         return ResponseEntity.status(HttpStatus.OK).body(usersService.getUserById(userId));
     }
 

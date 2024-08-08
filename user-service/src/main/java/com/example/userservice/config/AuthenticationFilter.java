@@ -1,6 +1,6 @@
 package com.example.userservice.config;
 
-import com.example.userservice.controller.dto.users.UserLoginRequestDto;
+import com.example.userservice.controller.dto.users.UsersLoginRequestDto;
 import com.example.userservice.domain.users.Users;
 import com.example.userservice.service.UsersService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +41,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
         try {
-            UserLoginRequestDto creds = new ObjectMapper().readValue(req.getInputStream(), UserLoginRequestDto.class);
+            UsersLoginRequestDto creds = new ObjectMapper().readValue(req.getInputStream(), UsersLoginRequestDto.class);
             return getAuthenticationManager().authenticate(
                     new UsernamePasswordAuthenticationToken(creds.getEmail(), creds.getPassword(), new ArrayList<>()));
         } catch (IOException e) {
