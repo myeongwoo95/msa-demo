@@ -1,7 +1,6 @@
 package com.example.userservice.config;
 
 import com.example.userservice.controller.dto.users.UserLoginRequestDto;
-import com.example.userservice.controller.dto.users.UserResponseDto;
 import com.example.userservice.domain.users.Users;
 import com.example.userservice.service.UsersService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,6 +24,8 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -55,12 +56,17 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         String email = ((User) auth.getPrincipal()).getUsername();
         Users user = usersService.getUserByEmail(email);
 
+        List<String> roles =user.getRoles().stream()
+                .map(role -> role.getKey())
+                .collect(Collectors.toList());
+
         SecretKey secretKey = Keys.hmacShaKeyFor(environment.getProperty("token.secret").getBytes());
 
         Instant now = Instant.now();
 
         String token = Jwts.builder()
                 .setSubject(user.getUserId().toString())
+                .claim("roles", roles)
                 .setIssuedAt(Date.from(now))
                 .setExpiration(Date.from(now.plusMillis(environment.getProperty("token.expiration_time", Long.class))))
                 .signWith(secretKey, SignatureAlgorithm.HS256)

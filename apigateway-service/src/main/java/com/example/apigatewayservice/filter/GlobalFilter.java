@@ -17,10 +17,8 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
         super(Config.class);
     }
 
-    // application.yml에 설정된 값이 들어온다.
     @Data
     public static class Config {
-        // Put the configuration properties
         private boolean preLogger;
         private boolean postLogger;
     }

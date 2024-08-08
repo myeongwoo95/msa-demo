@@ -7,12 +7,12 @@ spring:
 
   cloud:
     gateway:
-      ##### 글로벌 필터 #####
+      ##### 글로벌 필터 (시큐리티 필터를 제외한 모든 필터중에 가장 먼저 동작) #####
       default-filters:
         - name: GlobalFilter
           args:
-            preLogger: true
-            postLogger: true
+            preLogger: true   # preLogger를 true로 설정하면 요청이 들어올 때 로그를 찍는다.
+            postLogger: true  # postLogger를 true로 설정하면 응답이 나갈 때 로그를 찍는다.
 
       routes:
         ##### 카탈로그 서비스 #####
@@ -24,8 +24,8 @@ spring:
             - AddRequestHeader=catalog-header-key-request, catalog-header-value-request
             - AddResponseHeader=catalog-header-key-response, catalog-header-value-request
             - RewritePath=/catalog-service/(?<segment>.*), /$\{segment}
-            - name: CustomFilter
-            - name: LoggingFilter
+            - name: CustomFilter  # 필터를 2개 달기 위해서는 name을 붙혀줘야한다.
+            - name: LoggingFilter # 필터를 2개 달기 위해서는 name을 붙혀줘야한다.
               args:
                 preLogger: true
                 postLogger: true
@@ -36,6 +36,7 @@ spring:
           predicates:
             - Path=/order-service/**
           filters:
+            - RemoveRequestHeader=Cookie
             - RewritePath=/order-service/(?<segment>.*), /$\{segment}
 
         ##### 사용자 서비스 #####
@@ -68,7 +69,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - AuthFilter
+
 
 token:
   secret: ${TOKEN_SECRET}

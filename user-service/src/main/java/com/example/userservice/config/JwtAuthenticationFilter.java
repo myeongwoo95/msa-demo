@@ -42,7 +42,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             Claims claims = getClaimsFromToken(token);
             String userId = claims.getSubject();
 
-            if (userId != null || !userId.isEmpty()) {
+            if (userId != null && !userId.isEmpty()) {
                 Authentication authentication = new UsernamePasswordAuthenticationToken(userId, null, Collections.emptyList());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }

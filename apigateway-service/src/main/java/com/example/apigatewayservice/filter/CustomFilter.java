@@ -1,5 +1,6 @@
 package com.example.apigatewayservice.filter;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
@@ -15,8 +16,10 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
         super(Config.class);
     }
 
+    @Data
     public static class Config {
-        // Put the configuration properties
+        private boolean preLogger;
+        private boolean postLogger;
     }
 
     @Override

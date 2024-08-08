@@ -12,9 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.expression.WebExpressionAuthorizationManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @RequiredArgsConstructor
 @Configuration
@@ -48,12 +46,12 @@ public class SecurityConfig {
         // 인가
         http
                 .authorizeHttpRequests((authz) -> authz
-                .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/health-check")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/users", "POST")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/login", "POST")).permitAll()
-                .anyRequest().authenticated()
+//                .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
+//                .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+//                .requestMatchers(new AntPathRequestMatcher("/health-check")).permitAll()
+//                .requestMatchers(new AntPathRequestMatcher("/users", "POST")).permitAll()
+//                .requestMatchers(new AntPathRequestMatcher("/login", "POST")).permitAll()
+                .anyRequest().permitAll()
         );
 
         return http.build();

@@ -5,6 +5,7 @@ import com.example.userservice.controller.dto.users.UserResponseDto;
 import com.example.userservice.controller.dto.users.UsersSignUpRequestDto;
 import com.example.userservice.domain.users.Users;
 import com.example.userservice.domain.users.UsersRepository;
+import com.example.userservice.type.UsersRole;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.User;
@@ -15,7 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
@@ -36,6 +39,12 @@ public class UsersService implements UserDetailsService {
     public Long createUser(UsersSignUpRequestDto requestDto){
         Users user = strictMapper.map(requestDto, Users.class);
         user.setEncryptedPwd(bCryptPasswordEncoder.encode(requestDto.getPwd()));
+
+        // 권한을 여러 개 추가
+        Set<UsersRole> roles = new HashSet<>();
+        roles.add(UsersRole.USER);
+        user.setRoles(roles);
+
         usersRepository.save(user);
         return user.getUserId();
     }

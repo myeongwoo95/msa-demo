@@ -1,10 +1,13 @@
 package com.example.userservice.domain.users;
 
 import com.example.userservice.common.BaseTimeEntity;
+import com.example.userservice.type.UsersRole;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.util.Set;
 
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,4 +31,9 @@ public class Users extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String encryptedPwd;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Set<UsersRole> roles;
 }
