@@ -64,10 +64,8 @@ public class UsersService implements UserDetailsService {
 
         UsersResponseDto userResponseDto =  strictMapper.map(user, UsersResponseDto.class);
 
-        // RestTemplate restTemplate
+        // restTemplate
         orderUrl = String.format(orderUrl, userId);
-        System.out.println("orderUrl = " + orderUrl);
-
         ResponseEntity<List<OrdersResponseDto>> responseEntityOrders =
                 restTemplate.exchange(
                         orderUrl,
@@ -75,6 +73,8 @@ public class UsersService implements UserDetailsService {
                         null,
                         new ParameterizedTypeReference<List<OrdersResponseDto>>() {}
                 );
+
+        // feign client
 
         List<OrdersResponseDto> orders = responseEntityOrders.getBody();
 
